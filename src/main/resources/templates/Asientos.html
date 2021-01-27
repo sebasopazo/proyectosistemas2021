@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+        <title>Proyecto Turbus</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link href='https://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Laila' rel='stylesheet'>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+                crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/css/footer.css" />
+
+        <script src="/js/asientosjs.js"></script>
+
+        <style>
+                th {
+                        cursor: pointer;
+                }
+        </style>
+
+</head>
+
+<body>
+
+        <header>
+                <div class="container-fluid" id="contOtros">
+                        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+                                <a class="navbar-brand" th:href="@{/home}">Inicio</a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                        <ul class="navbar-nav mr-auto">
+                                                <li class="nav-item">
+                                                        <a class="nav-link" href="/terminales">Terminales</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                        <a class="nav-link" href="/contacto">Contacto</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                        <a class="nav-link" href="/nosotros">¿Quiénes somos?</a>
+                                                </li>
+                                        </ul>
+                                </div>
+                        </nav>
+                </div>
+        </header>
+
+        <div class="container-fluid pt-4 pb-4">
+                <div class="row uno">
+                        <div class="col mb-4">
+                                
+                        </div>
+                        <div class="col mb-4">
+
+                                <div class="menu">
+
+                                        <div class="containere">
+
+
+                                                <input id="numInf" type="hidden" th:value="${numInf}"
+                                                        class="form-control" />
+                                                <input id="numSup" type="hidden" th:value="${numSup}"
+                                                        class="form-control" />
+
+
+
+                                                <table class="table table-selective table-hover">
+                                                        <thead>
+
+                                                        </thead>
+                                                        <tbody>
+                                                                <tr>
+                                                                        <strong th:each="asiento : ${priFila}">
+                                                                                <th>
+                                                                                        <p
+                                                                                                th:text="${asiento.numeroAsiento}">
+                                                                                        </p><img src="/img/Asiento-Vacio.png"
+                                                                                                class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
+                                                                                                alt=""
+                                                                                                th:id="${asiento.id}"
+                                                                                                th:estado="${asiento.estado}"
+                                                                                                onclick="CambiarEstado(this.id)">
+                                                                                </th>
+                                                                        </strong>
+                                                                </tr>
+                                                                <tr>
+                                                                        <strong th:each="asiento : ${segFila}">
+                                                                                <th>
+                                                                                        <p
+                                                                                                th:text="${asiento.numeroAsiento}">
+                                                                                        </p><img src="/img/Asiento-Vacio.png"
+                                                                                                class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
+                                                                                                alt=""
+                                                                                                th:id="${asiento.id}"
+                                                                                                th:estado="${asiento.estado}"
+                                                                                                onclick="CambiarEstado(this.id)">
+                                                                                </th>
+                                                                        </strong>
+                                                                </tr>
+                                                                <tr>
+                                                                        <strong th:each="asiento : ${terFila}">
+                                                                                <th>
+                                                                                        <p
+                                                                                                th:text="${asiento.numeroAsiento}">
+                                                                                        </p><img src="/img/Asiento-Vacio.png"
+                                                                                                class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
+                                                                                                alt=""
+                                                                                                th:id="${asiento.id}"
+                                                                                                th:estado="${asiento.estado}"
+                                                                                                onclick="CambiarEstado(this.id)">
+                                                                                </th>
+                                                                        </strong>
+                                                                </tr>
+                                                                <tr>
+                                                                        <strong th:each="asiento : ${cuarFila}">
+                                                                                <th>
+                                                                                        <p
+                                                                                                th:text="${asiento.numeroAsiento}">
+                                                                                        </p><img src="/img/Asiento-Vacio.png"
+                                                                                                class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
+                                                                                                alt=""
+                                                                                                th:id="${asiento.id}"
+                                                                                                th:estado="${asiento.estado}"
+                                                                                                onclick="CambiarEstado(this.id)">
+                                                                                </th>
+                                                                        </strong>
+                                                                </tr>
+                                                                <tr>
+                                                                        <strong th:each="asiento : ${quinFila}">
+                                                                                <th>
+                                                                                        <p
+                                                                                                th:text="${asiento.numeroAsiento}">
+                                                                                        </p><img src="/img/Asiento-Vacio.png"
+                                                                                                class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
+                                                                                                alt=""
+                                                                                                th:id="${asiento.id}"
+                                                                                                th:estado="${asiento.estado}"
+                                                                                                onclick="CambiarEstado(this.id)">
+                                                                                </th>
+                                                                        </strong>
+                                                                </tr>
+                                                                <tr>
+                                                                        <strong th:each="asiento : ${sexFila}">
+                                                                                <th>
+                                                                                        <p
+                                                                                                th:text="${asiento.numeroAsiento}">
+                                                                                        </p><img src="/img/Asiento-Vacio.png"
+                                                                                                class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
+                                                                                                alt=""
+                                                                                                th:id="${asiento.id}"
+                                                                                                th:estado="${asiento.estado}"
+                                                                                                onclick="CambiarEstado(this.id)">
+                                                                                </th>
+                                                                        </strong>
+                                                                </tr>
+                                                                <tr>
+                                                                        <strong th:each="asiento : ${sepFila}">
+                                                                                <th>
+                                                                                        <p
+                                                                                                th:text="${asiento.numeroAsiento}">
+                                                                                        </p><img src="/img/Asiento-Vacio.png"
+                                                                                                class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
+                                                                                                alt=""
+                                                                                                th:id="${asiento.id}"
+                                                                                                th:estado="${asiento.estado}"
+                                                                                                onclick="CambiarEstado(this.id)">
+                                                                                </th>
+                                                                        </strong>
+                                                                </tr>
+                                                                <tr>
+                                                                        <strong th:each="asiento : ${octFila}">
+                                                                                <th>
+                                                                                        <p
+                                                                                                th:text="${asiento.numeroAsiento}">
+                                                                                        </p><img src="/img/Asiento-Vacio.png"
+                                                                                                class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
+                                                                                                alt=""
+                                                                                                th:id="${asiento.id}"
+                                                                                                th:estado="${asiento.estado}"
+                                                                                                onclick="CambiarEstado(this.id)">
+                                                                                </th>
+                                                                        </strong>
+                                                                </tr>
+                                                                <tr>
+                                                                        <strong th:each="asiento : ${novFila}">
+                                                                                <th>
+                                                                                        <p
+                                                                                                th:text="${asiento.numeroAsiento}">
+                                                                                        </p><img src="/img/Asiento-Vacio.png"
+                                                                                                class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
+                                                                                                alt=""
+                                                                                                th:id="${asiento.id}"
+                                                                                                th:estado="${asiento.estado}"
+                                                                                                onclick="CambiarEstado(this.id)">
+
+                                                                                </th>
+                                                                        </strong>
+                                                                </tr>
+
+                                                                </tfoot>
+                                                </table>
+
+
+
+                                        </div>
+
+                                </div>
+
+
+                        </div>
+                        <div class="col mb-4">
+                                <div class="card">
+
+                                        <div class="card-body">
+                                                <h5 class="card-title">Informacion del Viaje:</h5>
+                                                <div class="row">
+                                                        <div class="col-lg-6 ">
+                                                                <p class="card-text"> Origen:</p>
+                                        
+                                                                <p class="card-text"> Destino: </p>
+                                        
+                                                                <p class="card-text"> fecha de viaje: </p>
+                                        
+                                                                <p class="card-text"> Hora de viaje: </p>
+                                        
+                                                        </div>
+                                                        <div class="col-lg-6 ">
+                                                                <p id="origen" class="card-text"> Origen:</p>
+                                                                <p id="destino" class="card-text"> Destino: </p>
+                                                                <p id="fdv" class="card-text"> fecha de viaje: </p>
+                                                                <p id="hdv" class="card-text"> Hora de viaje: </p>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                        <a onclick="" class="btn btn-primary" href="" th:text="'Confimar'"
+                                                        title="Comfirmar Compra" id="boton">confirmar</a>
+
+                                </div>
+                        </div>
+                </div>
+
+
+        </div>
+
+        <footer>
+
+                <div class="container-footer-all">
+
+                        <div class="container-body">
+
+                                <div class="colum1">
+                                        <h1>Buses Turbus</h1>
+
+                                        <p>Turbus es la principal empresa de transporte terrestre de pasajeros del país.
+                                                Lleva 70 años transportando a los chilenos de Arica a Pto. Montt.
+                                        </p>
+
+                                </div>
+
+                                <div class="colum2">
+
+                                        <h1>Redes Sociales</h1>
+
+                                        <div class="row">
+                                                <img src="/img/facebook.png">
+                                                <label>Siguenos en Facebook</label>
+                                        </div>
+                                        <div class="row">
+                                                <img src="/img/twitter.png">
+                                                <label>Siguenos en Twitter</label>
+                                        </div>
+                                        <div class="row">
+                                                <img src="/img/instagram.png">
+                                                <label>Siguenos en Instagram</label>
+                                        </div>
+                                        <div class="row">
+                                                <img src="/img/google-plus.png">
+                                                <label>Siguenos en Google Plus</label>
+                                        </div>
+                                        <div class="row">
+                                                <img src="/img/pinterest.png">
+                                                <label>Siguenos en Pinteres</label>
+                                        </div>
+
+
+                                </div>
+
+                                <div class="colum3">
+
+                                        <h1>Informacion Contactos</h1>
+
+                                        <div class="row2">
+                                                <img src="/img/house.png">
+                                                <label>La Romana,
+                                                        Temuco de Chile
+                                                        Manuel del Cabral
+                                                        Casa # 27</label>
+                                        </div>
+
+                                        <div class="row2">
+                                                <img src="/img/smartphone.png">
+                                                <label>+56-930211325</label>
+                                        </div>
+
+                                        <div class="row2">
+                                                <img src="/img/contact.png">
+                                                <label>turbus@gmail.com</label>
+                                        </div>
+
+
+                                </div>
+
+                        </div>
+
+                </div>
+
+                <div class="container-footer">
+                        <div class="footer">
+                                <div class="copyright">
+                                        © 2017 Todos los Derechos Reservados | <a href="">Magtimus</a>
+                                </div>
+
+                                <div class="information">
+                                        <a href="">Informacion Compañia</a> | <a href="">Privacion y Politica</a> | <a
+                                                href="">Terminos y
+                                                Condiciones</a>
+                                </div>
+                        </div>
+
+                </div>
+
+        </footer>
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+        <script>
+
+
+                var numInf = (document.getElementById("numInf").value);
+                var numSup = (document.getElementById("numSup").value);
+
+                for (var i = numInf; i <= numSup; i++) {
+                        var estado = document.getElementById(i).getAttribute("estado");
+
+                        if (estado == '0') {
+                                document.getElementById(i).setAttribute("src", "/img/Asiento-Vacio.png");
+                        } else if (estado == '2') {
+                                document.getElementById(i).setAttribute("src", "/img/Asiento-Vendido.png");
+                                document.getElementById(i).setAttribute("onclick", "");
+
+                        }
+
+                }
+
+
+
+        </script>
+
+        <script type="text/JavaScript">
+                    var givenId;
+                    var seleccionados=0;
+        
+                    function CambiarEstado (givenId) {
+
+                        
+
+                        var image = document.getElementById(givenId);
+                        var estado = document.getElementById(givenId).getAttribute("estado");
+                            
+                            if (seleccionados <1 ) {
+                                
+                                if (estado=='0'){
+                                    document.getElementById("boton").setAttribute("onclick", "ConfimarAsiento("+givenId+")");   
+                                    document.getElementById("boton").setAttribute("href","/confirmarPasajes/"+givenId);  
+                                    image.src='/img/Asiento-Seleccionado.png';
+                                    estado='1';
+                                    document.getElementById(givenId).setAttribute("estado","1") ;
+                                    seleccionados++;
+                                
+                                } else {
+                                    
+                                    image.src='/img/Asiento-vacio.png';
+                                    estado = '0';
+                                    document.getElementById(givenId).setAttribute("estado","0") ;
+                                    seleccionados--;
+                                    
+                                }     
+                            }else if(seleccionados>=1) {
+                               if(estado=='1'){
+                                    document.getElementById("boton").setAttribute("onclick",""); 
+                                    image.src='/img/Asiento-vacio.png';
+                                    estado = '0';
+                                    document.getElementById(givenId).setAttribute("estado","0") ;
+                                    seleccionados--;
+                                }
+                                
+                            }
+
+                            
+                }
+            </script>
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+        <script src="/docs/4.4/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+                crossorigin="anonymous"></script>
+</body>
+
+</html>

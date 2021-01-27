@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.containere {
+    float:inherit;
+    left: 150px;
+    right: 150px;
+    width: 73%;
+    height: 500%;
+    margin-left: 0%;
+    border: 2px solid darkturquoise;
+}
+.container h2{
+    font-family: cursive;
+
+}
+.table tr{
+    width: 100px;
+    height: 50px;
+}
+
+.card {
+    width: 90%;
+    height: 30%;
+    position: sticky;
+    top: 0;
+    border: 2px solid darkturquoise ;
+
+}
+h5{
+    font-family: 'Arizonia';font-size: 40px;
+}
+p{
+    font-family: 'Laila';font-size: 14px;
+}
+
+ul{
+	padding: 0;
+	margin: 0 0 0 150px;
+	list-style: none;
+}
+
+nav a:hover{
+	background: red;
+	transition: 0.5s;
+	text-transform: uppercase;
+}
+
+#contOtros{
+    padding: 0;
+}
+
+.btn {
+    position: sticky;
+    width: 100%;
+    height: 16%;
+}

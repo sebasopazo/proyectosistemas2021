@@ -1,0 +1,129 @@
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+}
+
+
+#fondo{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: 0;
+}
+
+#fondo img{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    min-width:50%;
+    min-height:50%;
+}
+
+input {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 0.5px solid #E1E1E1;
+	padding: 0 4px 0 4px;
+ }
+
+.fondoTexto{
+	background-color: #0000008a;
+    border-radius: 20px;
+}
+
+#form{
+	border: 2px black dashed;
+	padding: 10px;
+}
+
+#imgCiudades{
+	width:500px;
+	height:400px;
+}
+
+#carouselExampleCaptions{
+	border: 5px black outset;
+	margin-left: -15px;
+	margin-right: 0px;
+	margin-top: 0px;
+}
+
+#buscarPasaje{
+	background-color:#F89999;
+	border: 1px black solid;
+	border-radius: 10px;
+}
+
+#buscarPasaje:hover{
+	opacity: 0.50;
+	-moz-opacity: .50;
+	filter:alpha (opacity=50);
+}
+
+#buscarPasaje a{
+	color:#fff;
+	text-decoration:none;
+	padding:5px 5px 5px 0;
+}
+
+ul{
+	padding: 0;
+	margin: 0 0 0 150px;
+	list-style: none;
+}
+
+nav a:hover{
+	background: red;
+	transition: 0.5s;
+	text-transform: uppercase;
+}
+
+select{
+	border: 1px rgb(175, 175, 175) solid;
+	border-radius: 5px;
+}
+
+#calendar {
+	font-size:12px;
+	width: 300px;
+}
+#calendar caption {
+	text-align:left;
+	padding:5px 10px;
+	background-color:#5f6468;
+	color:#fff;
+	font-weight:bold;
+	font-size:medium;
+}
+#calendar caption div:nth-child(1) {float:left;}
+#calendar caption div:nth-child(2) {float:right;}
+#calendar caption div:nth-child(2) a {cursor:pointer;}
+#calendar th {
+	background-color: black;
+	color:#fff;
+	width:40px;
+}
+#calendar td {
+	text-align:right;
+	padding:2px 5px;
+	background-color:silver;
+}
+#calendar .hoy {
+	background-color: rgb(75, 156, 75);
+}
+
+#LabelSentidoViaje{
+	display: block;
+	text-align: center;
+}

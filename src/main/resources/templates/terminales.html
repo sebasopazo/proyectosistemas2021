@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Proyecto Turbus</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<link rel="stylesheet" type="text/css" href="/css/terminales.css">
+<link rel="stylesheet" type="text/css" href="/css/footer.css"/>
+
+<body>
+
+    
+    
+    <header>
+    
+        <div class="container-fluid" id="contOtros">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+                <a class="navbar-brand" th:href="@{/home}">Inicio</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-p="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/terminales">Terminales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contacto">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/nosotros">¿Quiénes somos?</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    
+    </header>
+    
+    <div class="container pt-4 pb-4"  >
+        <div class="card todos">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1>Ciudades donde llega Turbus, con su respectivo terminal</h1><br>
+                        <h3>Haz click en el circulo para saber sobre la dirección de aquel terminal:</h3>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form method="post" name="form">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="t">Iquique</p>
+                                    </div>
+                                    <div class="col">
+                                        <input type="radio" id="Iquique" name="ciudades" value="Iquique"
+                                            onclick="mostrarInfo()"
+                                            >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="t">Antofagasta</p>
+                                    </div>
+                                    <div class="col">
+                                        <input type="radio" id="Antofagasta" name="ciudades" value="Antofagasta"
+                                            onclick="mostrarInfo()">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="t">Copiapó</p>
+                                    </div>
+                                    <div class="col">
+                                        <input type="radio" name="ciudades" id="Copiapó" value="Copiapo"
+                                            onclick="mostrarInfo()">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="t">La Serena</p>
+                                    </div>
+                                    <div class="col">
+                                        <input type="radio" name="ciudades" id="LaSerena" value="La Serena"
+                                            onclick="mostrarInfo()">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="t">Valparaíso</p>
+                                    </div>
+                                    <div class="col">
+                                        <input type="radio" name="ciudades" id="Valparaíso" value="Valparaiso"
+                                            onclick="mostrarInfo()">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="t">Santiago</p>
+                                    </div>
+                                    <div class="col">
+                                        <input type="radio" name="ciudades" id="Santiago" value="Santiago"
+                                            onclick="mostrarInfo()">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="t">Rancagua</p>
+                                    </div>
+                                    <div class="col">
+                                        <input type="radio" name="ciudades" id="Rancagua" value="Rancagua"
+                                            onclick="mostrarInfo()">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="t">Talca</p>
+                                    </div>
+                                    <div class="col">
+                                        <input type="radio" name="ciudades" id="Talca" value="Talca"
+                                            onclick="mostrarInfo()">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="t">Concepción</p>
+                                    </div>
+                                    <div class="col">
+                                        <input type="radio" name="ciudades" id="Concepción" value="Concepcion"
+                                            onclick="mostrarInfo()">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="t">Temuco</p>
+                                    </div>
+                                    <div class="col">
+                                        <input type="radio" name="ciudades" id="Temuco" value="Temuco"
+                                            onclick="mostrarInfo()">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="t">Valdivia</p>
+                                    </div>
+                                    <div class="col">
+                                        <input type="radio" name="ciudades" id="Valdivia" value="Valdivia"
+                                            onclick="mostrarInfo()">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="t">Puerto Montt</p>
+                                    </div>
+                                    <div class="col">
+                                        <input type="radio" name="ciudades" id="Puerto Montt" value="Puerto Montt"
+                                            onclick="mostrarInfo()">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card direc " id="nombre">
+                            <p id="Descripcion"></p>
+                        </div>
+                        <br><br>
+                        <div class="card mapa" id="cmapa">
+                            <iframe src="" id="mapa" width="500" height="500" frameborder="0" style="border:0;" allowfullscreen=""
+                                aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <footer>
+    
+            <div class="container-footer-all">
+    
+                <div class="container-body">
+    
+                    <div class="colum1">
+                        <h1>Turbus</h1>
+    
+                        <p>Esta compañia se dedica al transporte de personas en tiempo de cuarentena,
+                            por lo que va en contra de la ley. La confirmacion de nuestros servicios es
+                            netamente bajo su responsabilidad.
+                        </p>
+    
+                    </div>
+    
+                    <div class="colum2">
+    
+                        <h1>Redes Sociales</h1>
+    
+                        <div class="row">
+                            <img src="/img/facebook.png">
+                            <p>Siguenos en Facebook</p>
+                        </div>
+                        <div class="row">
+                            <img src="/img/twitter.png">
+                            <p>Siguenos en Twitter</p>
+                        </div>
+                        <div class="row">
+                            <img src="/img/instagram.png">
+                            <p>Siguenos en Instagram</p>
+                        </div>
+                        <div class="row">
+                            <img src="/img/google-plus.png">
+                            <p>Siguenos en Google Plus</p>
+                        </div>
+                        <div class="row">
+                            <img src="/img/pinterest.png">
+                            <p>Siguenos en Pinteres</p>
+                        </div>
+    
+    
+                    </div>
+    
+                    <div class="colum3">
+    
+                        <h1>Informacion Contactos</h1>
+    
+                        <div class="row2">
+                            <img src="/img/house.png">
+                            <p>La Romana,
+                                Temuco de Chile
+                                Manuel del Cabral
+                                Casa # 27</p>
+                        </div>
+    
+                        <div class="row2">
+                            <img src="/img/smartphone.png">
+                            <p>+56-930211325</p>
+                        </div>
+    
+                        <div class="row2">
+                            <img src="/img/contact.png">
+                            <p>Turbus@gmail.com</p>
+                        </div>
+    
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+            <div class="container-footer">
+                <div class="footer">
+                    <div class="copyright">
+                        © 2017 Todos los Derechos Reservados | <a href="">Magtimus</a>
+                    </div>
+    
+                    <div class="information">
+                        <a href="">Informacion Compañia</a> | <a href="">Privacion y Politica</a> | <a href="">Terminos y
+                            Condiciones</a>
+                    </div>
+                </div>
+    
+            </div>
+    
+    
+    </footer>
+
+    <script>
+
+        document.getElementById("nombre").style.visibility="hidden";
+        document.getElementById("cmapa").style.visibility="hidden";
+
+    </script>
+
+        <script>
+            function mostrarInfo() {
+                var ciudad;
+                var ciudades = document.getElementsByName("ciudades");
+                for (i = 0; i < ciudades.length; i++) {
+                    if (ciudades[i].checked) {
+                        ciudad = ciudades[i].value;
+                        break;
+                    }
+                }
+                if (ciudad == "Iquique") {
+                    document.getElementById("Descripcion").innerHTML
+                        = "Terminal Rodoviario de Iquique " + "<br/>" + " Patricio Lynch #1400."; 
+                    document.getElementById("mapa").setAttribute("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3744.2194486906124!2d-70.15258868522!3d-20.208199986448584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91521153ea03964d%3A0x4e0a372c24c36f87!2sTerminal%20Rodoviario%20de%20Iquique!5e0!3m2!1ses!2scl!4v1585554324165!5m2!1ses!2scl");    
+                    document.getElementById("nombre").style.visibility="visible";
+                    document.getElementById("cmapa").style.visibility="visible";                    
+                }
+                if (ciudad == "Antofagasta") {
+                    document.getElementById("Descripcion").innerHTML
+                        = "Terminal de Buses Cardenal Carlos Oviedo Cavada " + "<br/>" + " Av. Pedro Aguirre Cerda #253.";
+                        document.getElementById("mapa").setAttribute("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2257915.800454376!2d-71.65032417573352!3d-21.650382409770753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xaea7480a315c33cb!2sTerminal%20de%20Buses%20Cardenal%20Carlos%20Oviedo%20Cavada!5e0!3m2!1ses!2scl!4v1585554509895!5m2!1ses!2scl");
+                        document.getElementById("nombre").style.visibility="visible"; 
+                        document.getElementById("cmapa").style.visibility="visible";   
+                        
+                }
+                if (ciudad == "Copiapo") {
+                    document.getElementById("Descripcion").innerHTML
+                        = "Terminal Rodoviario de Copiapó " + "<br/>" + " Chañarcillo #680.";
+                        document.getElementById("mapa").setAttribute("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3543.2245339057044!2d-70.3365295850768!3d-27.368702282933388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96980477b14ec355%3A0x647b69c053bacc95!2sTerminal%20De%20Buses%20Copiapo!5e0!3m2!1ses!2scl!4v1585554590553!5m2!1ses!2scl");
+                        document.getElementById("nombre").style.visibility="visible"; 
+                        document.getElementById("cmapa").style.visibility="visible";   
+                }
+                if (ciudad == "La Serena") {
+                    document.getElementById("Descripcion").innerHTML
+                        = "Terminal de buses La Serena " + "<br/>" + " Amunátegui #107.";
+                        document.getElementById("mapa").setAttribute("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3458.3785226764207!2d-71.2566195!3d-29.9110031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9691ca6eed3102a3%3A0x4e7a5c06135323cb!2sTerminal%20de%20Buses%20La%20Serena!5e0!3m2!1ses!2scl!4v1585554645286!5m2!1ses!2scl");
+                        document.getElementById("nombre").style.visibility="visible"; 
+                        document.getElementById("cmapa").style.visibility="visible";   
+                }
+                if (ciudad == "Valparaiso") {
+                    document.getElementById("Descripcion").innerHTML
+                        = "Terminal de buses Valparaíso " + "<br/>" + "	Rawson #350.";
+                        document.getElementById("mapa").setAttribute("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d836.0914926889344!2d-71.60655362761288!3d-33.04683065461668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689e0c4c377c3ed%3A0x7b6f5598e7c6c2aa!2sTerminal%20Bus%20VALPO!5e0!3m2!1ses!2scl!4v1585554757876!5m2!1ses!2scl");
+                        document.getElementById("nombre").style.visibility="visible";
+                        document.getElementById("cmapa").style.visibility="visible";    
+                }
+                if (ciudad == "Santiago") {
+                    document.getElementById("Descripcion").innerHTML
+                        = "Terminal Estación Central " + "<br/>" + " Av. Libertador Bernardo O'Higgins #3850.";
+                        document.getElementById("mapa").setAttribute("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.8055514230336!2d-70.6881262!3d-33.45437220000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c4f5cd039dad%3A0x7b9be22dd33b4d73!2sTerminal%20Alameda%20Santiago!5e0!3m2!1ses!2scl!4v1585554804188!5m2!1ses!2scl");
+                        document.getElementById("nombre").style.visibility="visible";
+                        document.getElementById("cmapa").style.visibility="visible";    
+                }
+                if (ciudad == "Rancagua") {
+                    document.getElementById("Descripcion").innerHTML
+                        = "Terminal O’Higgins " + "<br/>" + " Panamericana Sur #1431.";
+                        document.getElementById("mapa").setAttribute("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206.36012091644673!2d-70.75035586952683!3d-34.15243229820477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd0f37d4cdcbf86d6!2sTerminal!5e0!3m2!1ses!2scl!4v1585555389356!5m2!1ses!2scl");
+                        document.getElementById("nombre").style.visibility="visible"; 
+                        document.getElementById("cmapa").style.visibility="visible";   
+                }
+                if (ciudad == "Talca") {
+                    document.getElementById("Descripcion").innerHTML
+                        = "Terminal Talca " + "<br/>" + " Tres Sur #1945.";
+                        document.getElementById("mapa").setAttribute("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1625.488215118471!2d-71.64767276063549!3d-35.43061387900722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9665c6b907c33eff%3A0x73e386417eaf7fe9!2sTerminal%20de%20Buses%20de%20Talca!5e0!3m2!1ses!2scl!4v1585554625123!5m2!1ses!2scl");
+                        document.getElementById("nombre").style.visibility="visible"; 
+                        document.getElementById("cmapa").style.visibility="visible";   
+                }
+                if (ciudad == "Concepcion") {
+                    document.getElementById("Descripcion").innerHTML
+                        = "Terminal Collao Concepcion " + "<br/>" + " Tegualda #860.";
+                        document.getElementById("mapa").setAttribute("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.12897560906!2d-73.02435208418122!3d-36.81542918535002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9669b43c049c81c9%3A0x5738f7fe1749e32f!2sTerminal%20Collao%20Concepcion!5e0!3m2!1ses!2scl!4v1585554525536!5m2!1ses!2scl");
+                        document.getElementById("nombre").style.visibility="visible";
+                        document.getElementById("cmapa").style.visibility="visible";    
+                }
+                if (ciudad == "Temuco") {
+                    document.getElementById("Descripcion").innerHTML
+                        = "Terminal Rodoviario Temuco " + "<br/>" + " Vicente Pérez Rosales #01609.";
+                        document.getElementById("mapa").setAttribute("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.071094741933!2d-72.57071078413134!3d-38.71617669398827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9614d3b34f298d49%3A0x2790aa588828a7e6!2sTerminal%20Rodoviario%20Temuco!5e0!3m2!1ses!2scl!4v1585554502943!5m2!1ses!2scl");
+                        document.getElementById("nombre").style.visibility="visible"; 
+                        document.getElementById("cmapa").style.visibility="visible";   
+                }
+                if (ciudad == "Valdivia") {
+                    document.getElementById("Descripcion").innerHTML
+                        = "Terminal de Buses Valdivia " + "<br/>" + " Anfión Muñoz #360.";
+                        document.getElementById("mapa").setAttribute("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1822.2368192102797!2d-73.23663016086881!3d-39.81540682023816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5b5a2f96699761dc!2sEmpresa%20de%20Transportes%20Rurales!5e0!3m2!1ses!2scl!4v1585554474966!5m2!1ses!2scl");
+                        document.getElementById("nombre").style.visibility="visible"; 
+                        document.getElementById("cmapa").style.visibility="visible";   
+                }
+                if (ciudad == "Puerto Montt") {
+                    document.getElementById("Descripcion").innerHTML
+                        = "Terminal Municipal de Puerto Montt " + "<br/>" + " Av. Diego Portales #1001.";
+                        document.getElementById("mapa").setAttribute("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1494.6133099572762!2d-72.95143712794997!3d-41.477686406510834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96183bb236071c8f%3A0xe754f9e939fb411!2sTerminal%20de%20Buses%20Municipal%20de%20Puerto%20Montt!5e0!3m2!1ses!2scl!4v1585554414600!5m2!1ses!2scl");
+                        document.getElementById("nombre").style.visibility="visible"; 
+                        document.getElementById("cmapa").style.visibility="visible";   
+                }
+            }
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

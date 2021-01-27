@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Proyecto Turbus</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/css/confirmarAsiento.css" />
+        <link rel="stylesheet" type="text/css" href="/css/footer.css" />
+        <script src="/js/confirmarAsientojs.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container-fluid pb-4" id="contOtros">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+                <a class="navbar-brand" th:href="@{/home}">Inicio</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">                    
+                        <li class="nav-item">
+                            <a class="nav-link" href="/terminales">Terminales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contacto">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/nosotros">¿Quiénes somos?</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="container">
+
+        <div class="card bg-light">
+            <div class="card-header bg-dark text-white">
+                <h1 th:text="${titulo}"></h1>
+            </div>
+            <div class="card-body">
+                <form th:action="@{/guardarAsiento}" th:object="${nuevoAsiento}" method="post">
+                    <div class="form-group row">
+                        <input type="hidden" th:field="*{id}">
+                        <label class="col-md-2" for="numeroAsiento">Numero de asiento elejido:</label>
+                        <input readonly type="text" th:field="*{numeroAsiento}" class="form-control form-control-sm col-md-6" id="numeroAsiento">
+                    </div>
+                    <div class="form-group row">
+                        <select th:field="*{estado}" class="form-control form-control-sm col-md-6" style="visibility:hidden" id="estado">
+                            <option th:value="${'2'}"  />
+                        </select>
+                        
+                    </div>
+                    <div class="form-group row">
+                        <input type="hidden" th:field="*{idBus}" class="form-control form-control-sm col-md-6" id="idBus">
+                        
+                    </div>
+                    <div class="card-footer bg-dark">
+                        <input id="btnguardar" type="submit" class="btn btn-primary btn-sm" value="Confirmar Compra">
+                        <a name="" id="b" class="btn btn-primary " role="button" onclick="mostrarGuardar()">Mostrar boleto</a>
+                    </div>
+
+                </form>
+
+                <div class="row pb-4 pt-4">
+                
+                    <div class="col-lg-3">
+                
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card" style="background-color:rgb(123,204,123); border-color:rgb(0, 0, 0);" id="boleto">
+                
+                            <div class="card-body">
+                
+                                <div class="row">
+                
+                                    <img id="logo" src="/img/Logo2.png"
+                                        class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
+                                        alt="">
+                
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-6 ">
+                                        <p class="card-text"> Origen:</p>
+                
+                                        <p class="card-text"> Destino: </p>
+
+                                        <p class="card-text"> fecha de viaje: </p>
+                
+                                        <p class="card-text"> Hora de viaje: </p>
+                                        <p class="card-text"> Numero de asiento: </p>
+                                        <p class="card-text"> Precio: </p>
+                                    </div>
+                                    <div class="col-lg-6 ">
+                                        <p id="origen" class="card-text"> Origen:</p>
+                                        <p id="destino" class="card-text"> Destino: </p>
+                                        <p id="fdv" class="card-text"> fecha de viaje: </p>
+                                        <p id="hdv" class="card-text"> Hora de viaje: </p>
+                                        <p id="na" class="card-text" value=""></p>
+                                        <p class="card-text"> $50.000.</p>
+                
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+    
+        <div class="container-footer-all">
+    
+            <div class="container-body">
+    
+                <div class="colum1">
+                    <h1>Buses MiDY</h1>
+    
+                    <p>Turbus es la principal empresa de transporte terrestre de pasajeros del país.
+                        Lleva 70 años transportando a los chilenos de Arica a Pto. Montt.
+
+                    </p>
+    
+                </div>
+    
+                <div class="colum2">
+    
+                    <h1>Redes Sociales</h1>
+    
+                    <div class="row">
+                        <img src="/img/facebook.png">
+                        <label>Siguenos en Facebook</label>
+                    </div>
+                    <div class="row">
+                        <img src="/img/twitter.png">
+                        <label>Siguenos en Twitter</label>
+                    </div>
+                    <div class="row">
+                        <img src="/img/instagram.png">
+                        <label>Siguenos en Instagram</label>
+                    </div>
+                    <div class="row">
+                        <img src="/img/google-plus.png">
+                        <label>Siguenos en Google Plus</label>
+                    </div>
+                    <div class="row">
+                        <img src="/img/pinterest.png">
+                        <label>Siguenos en Pinteres</label>
+                    </div>
+    
+    
+                </div>
+    
+                <div class="colum3">
+    
+                    <h1>Informacion Contactos</h1>
+    
+                    <div class="row2">
+                        <img src="/img/house.png">
+                        <label>La Romana,
+                            Temuco de Chile
+                            Manuel del Cabral
+                            Casa # 27</label>
+                    </div>
+    
+                    <div class="row2">
+                        <img src="/img/smartphone.png">
+                        <label>+56-930211325</label>
+                    </div>
+    
+                    <div class="row2">
+                        <img src="/img/contact.png">
+                        <label>Turbus@gmail.com</label>
+                    </div>
+    
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    
+        <div class="container-footer">
+            <div class="footer">
+                <div class="copyright">
+                    © 2017 Todos los Derechos Reservados | <a href="">Magtimus</a>
+                </div>
+    
+                <div class="information">
+                    <a href="">Informacion Compañia</a> | <a href="">Privacion y Politica</a> | <a href="">Terminos y
+                        Condiciones</a>
+                </div>
+            </div>
+    
+        </div>
+    
+    </footer>
+
+    <script>
+    
+            document.getElementById("btnguardar").style.visibility = "hidden";
+            document.getElementById("boleto").style.visibility = "hidden";
+    
+    </script>
+    <script>
+
+        var nam;
+        function mostrarGuardar() {
+
+            nam= document.getElementById("numeroAsiento").value;
+            
+            //document.getElementById("na").setAttribute("value",nam) ;
+
+            let spn=document.querySelector('#na');
+
+            spn.innerHTML = nam;
+
+            document.getElementById("btnguardar").style.visibility = "visible";
+            document.getElementById("boleto").style.visibility = "visible";
+        }
+
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+        
+
+</body>
+
+
+
+</html>
